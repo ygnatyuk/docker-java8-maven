@@ -8,7 +8,7 @@
 # extend the most recent long term support Ubuntu version
 FROM ubuntu:14.04
 
-MAINTAINER Stephen L. Reed (http://texai.org, stephenreed@yahoo.com)
+MAINTAINER Kai Winter (https://github.com/kaiwinter)
 
 # this is a non-interactive automated build - avoid some warning messages
 ENV DEBIAN_FRONTEND noninteractive
@@ -32,12 +32,6 @@ RUN ln -s /opt/maven/bin/mvn /usr/local/bin
 RUN rm -f /tmp/apache-maven-3.2.2.tar.gz
 ENV MAVEN_HOME /opt/maven
 
-# install git
-RUN apt-get install -y git
-
-# install nano
-RUN apt-get install -y nano
-
 # remove download archive files
 RUN apt-get clean
 
@@ -56,15 +50,6 @@ ENV PATH $JAVA_HOME/bin:$PATH
 
 # configure symbolic links for the java and javac executables
 RUN update-alternatives --install /usr/bin/java java $JAVA_HOME/bin/java 20000 && update-alternatives --install /usr/bin/javac javac $JAVA_HOME/bin/javac 20000
-
-# copy jenkins war file to the container
-ADD http://mirrors.jenkins-ci.org/war/1.574/jenkins.war /opt/jenkins.war
-RUN chmod 644 /opt/jenkins.war
-ENV JENKINS_HOME /jenkins
-
-# configure the container to run jenkins, mapping container port 8080 to that host port
-ENTRYPOINT ["java", "-jar", "/opt/jenkins.war"]
-EXPOSE 8080
 
 CMD [""]
 

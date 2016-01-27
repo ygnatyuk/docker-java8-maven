@@ -1,9 +1,6 @@
 # Ubuntu 14.04 LTS
-# Oracle Java 1.8.0_11 64 bit
+# Oracle Java 1.8.0_66 64 bit
 # Maven 3.2.2
-# Jenkins 1.574
-# git 1.9.1
-# Nano 2.2.6-1ubuntu1
 
 # extend the most recent long term support Ubuntu version
 FROM ubuntu:14.04
@@ -36,9 +33,9 @@ ENV MAVEN_HOME /opt/maven
 RUN apt-get clean
 
 # set shell variables for java installation
-ENV java_version 1.8.0_11
-ENV filename jdk-8u11-linux-x64.tar.gz
-ENV downloadlink http://download.oracle.com/otn-pub/java/jdk/8u11-b12/$filename
+ENV java_version 1.8.0_66
+ENV filename jdk-8u66-linux-x64.tar.gz
+ENV downloadlink http://download.oracle.com/otn-pub/java/jdk/8u66-b17/$filename
 
 # download java, accepting the license agreement
 RUN wget --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" -O /tmp/$filename $downloadlink 

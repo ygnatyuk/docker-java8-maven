@@ -1,5 +1,5 @@
 # Ubuntu 16.04
-# Oracle Java 1.8.0_66 64 bit
+# Oracle Java 1.8.0_65 64 bit
 # Maven 3.2.2
 
 FROM ubuntu:16.04
@@ -32,9 +32,9 @@ ENV MAVEN_HOME /opt/maven
 RUN apt-get clean
 
 # set shell variables for java installation
-ENV java_version 1.8.0_66
-ENV filename jdk-8u66-linux-x64.tar.gz
-ENV downloadlink http://download.oracle.com/otn-pub/java/jdk/8u66-b17/$filename
+ENV java_version 1.8.0_65
+ENV filename jdk-8u65-linux-x64.tar.gz
+ENV downloadlink http://download.oracle.com/otn-pub/java/jdk/8u65-b17/$filename
 
 # download java, accepting the license agreement
 RUN wget --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" -O /tmp/$filename $downloadlink 

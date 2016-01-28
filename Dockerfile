@@ -1,9 +1,8 @@
-# Ubuntu 14.04 LTS
+# Ubuntu 16.04
 # Oracle Java 1.8.0_66 64 bit
 # Maven 3.2.2
 
-# extend the most recent long term support Ubuntu version
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 
 MAINTAINER Kai Winter (https://github.com/kaiwinter)
 

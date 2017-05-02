@@ -4,7 +4,7 @@
 
 FROM ubuntu:16.04
 
-MAINTAINER Kai Winter (https://github.com/kaiwinter)
+MAINTAINER Yevhen Strazhko (https://github.com/strazhkoe)
 
 # this is a non-interactive automated build - avoid some warning messages
 ENV DEBIAN_FRONTEND noninteractive

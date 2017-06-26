@@ -32,7 +32,7 @@ ENV MAVEN_HOME /opt/maven
 RUN apt-get clean
 
 # set shell variables for java installation
-ENV java_version 1.8.0_101
+ENV java_version 1.8.0_131
 ENV filename jdk-8u131-linux-x64.tar.gz
 
 # download java, accepting the license agreement
@@ -47,7 +47,7 @@ ENV PATH $JAVA_HOME/bin:$PATH
 RUN update-alternatives --install /usr/bin/java java $JAVA_HOME/bin/java 20000 && update-alternatives --install /usr/bin/javac javac $JAVA_HOME/bin/javac 20000
 
 # install git
-RUN apt-get install git
+RUN apt-get install -y git
 
 CMD [""]
 
